@@ -9,6 +9,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.ProgressBar;
 
 import butterknife.Bind;
@@ -46,7 +47,7 @@ public class MainActivity extends AppCompatActivity {
         Rect bounds = progressBar.getProgressDrawable().getBounds();
         this.progressBar.setProgressDrawable(getResources().getDrawable(R.drawable.progress));
         this.progressBar.getProgressDrawable().setBounds(bounds);
-
+        thread();
 
     }
 
@@ -67,7 +68,7 @@ public class MainActivity extends AppCompatActivity {
                         if (!isClosed) {
                             startActivity(new Intent(MainActivity.this, MainActivity.class));
                         }
-                        progressBar.setVisibility(4);
+                        progressBar.setVisibility(View.INVISIBLE);
                         finish();
                     }
                 });
@@ -78,9 +79,9 @@ public class MainActivity extends AppCompatActivity {
                     Thread.sleep(50);
                 } catch (InterruptedException e) {
                 }
-                int access$4 = progress + 1;
-                progress = access$4;
-                return access$4;
+                int access = progress + 1;
+                progress = access;
+                return access;
             }
         }).start();
     }
