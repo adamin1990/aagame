@@ -11,9 +11,9 @@
         android:contentDescription="@drawable/icon"
         android:id="@+id/splashscreen"
         android:layout_centerInParent="true"
-        android:layout_height="-2"
+        android:layout_height="wrap_content"
         android:layout_marginTop="150dp"
-        android:layout_width="-2"
+        android:layout_width="wrap_content"
         android:src="@drawable/icon" />
 
     <ProgressBar
@@ -24,5 +24,6 @@
         android:layout_marginBottom="10dp"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
-        android:layout_width="-1" />
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+        android:layout_width="match_parent" />
 </RelativeLayout>

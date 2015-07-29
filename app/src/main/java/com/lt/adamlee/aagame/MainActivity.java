@@ -19,9 +19,9 @@ public class MainActivity extends AppCompatActivity {
     private static int progress;
     private Handler handler;
     public boolean isClosed;
-    @Bind(R.id.progressBar1)
-    ProgressBar progressBar;
 
+//    @Bind(R.id.progressBar1) ProgressBar progressBar;
+ProgressBar progressBar;
     private int progressStatus;
 
     public MainActivity() {
@@ -36,14 +36,14 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
         requestWindowFeature(1);
         getWindow().setFlags(AccessibilityNodeInfoCompat.ACTION_NEXT_HTML_ELEMENT, AccessibilityNodeInfoCompat.ACTION_NEXT_HTML_ELEMENT);
         getWindow().setFlags(TransportMediator.FLAG_KEY_MEDIA_NEXT, TransportMediator.FLAG_KEY_MEDIA_NEXT);
-
+        super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
         this.isClosed = false;
+        progressBar= (ProgressBar) findViewById(R.id.progressBar1);
         Rect bounds = progressBar.getProgressDrawable().getBounds();
         this.progressBar.setProgressDrawable(getResources().getDrawable(R.drawable.progress));
         this.progressBar.getProgressDrawable().setBounds(bounds);
@@ -66,7 +66,7 @@ public class MainActivity extends AppCompatActivity {
                handler.post(new Runnable() {
                     public void run() {
                         if (!isClosed) {
-                            startActivity(new Intent(MainActivity.this, MainActivity.class));
+                            startActivity(new Intent(MainActivity.this, GameActivity.class));
                         }
                         progressBar.setVisibility(View.INVISIBLE);
                         finish();
