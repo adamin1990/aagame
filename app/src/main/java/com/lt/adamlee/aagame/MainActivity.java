@@ -7,9 +7,8 @@ import android.support.v4.media.TransportMediator;
 import android.support.v4.view.accessibility.AccessibilityNodeInfoCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
+import android.view.Window;
 import android.widget.ProgressBar;
 
 import butterknife.Bind;
@@ -20,8 +19,8 @@ public class MainActivity extends AppCompatActivity {
     private Handler handler;
     public boolean isClosed;
 
-//    @Bind(R.id.progressBar1) ProgressBar progressBar;
-ProgressBar progressBar;
+    @Bind(R.id.progressBar1)
+    ProgressBar progressBar;
     private int progressStatus;
 
     public MainActivity() {
@@ -36,14 +35,13 @@ ProgressBar progressBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        requestWindowFeature(1);
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
         getWindow().setFlags(AccessibilityNodeInfoCompat.ACTION_NEXT_HTML_ELEMENT, AccessibilityNodeInfoCompat.ACTION_NEXT_HTML_ELEMENT);
         getWindow().setFlags(TransportMediator.FLAG_KEY_MEDIA_NEXT, TransportMediator.FLAG_KEY_MEDIA_NEXT);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
         this.isClosed = false;
-        progressBar= (ProgressBar) findViewById(R.id.progressBar1);
         Rect bounds = progressBar.getProgressDrawable().getBounds();
         this.progressBar.setProgressDrawable(getResources().getDrawable(R.drawable.progress));
         this.progressBar.getProgressDrawable().setBounds(bounds);
@@ -56,14 +54,14 @@ ProgressBar progressBar;
         new Thread(new Runnable() {
             public void run() {
                 while (progressStatus < 100) {
-                   progressStatus = doSomeWork();
-                   handler.post(new Runnable() {
-                       public void run() {
-                           progressBar.setProgress(progressStatus);
-                       }
-                   });
+                    progressStatus = doSomeWork();
+                    handler.post(new Runnable() {
+                        public void run() {
+                            progressBar.setProgress(progressStatus);
+                        }
+                    });
                 }
-               handler.post(new Runnable() {
+                handler.post(new Runnable() {
                     public void run() {
                         if (!isClosed) {
                             startActivity(new Intent(MainActivity.this, GameActivity.class));
@@ -85,8 +83,6 @@ ProgressBar progressBar;
             }
         }).start();
     }
-
-
 
 
 }

@@ -10,9 +10,9 @@ import android.support.v4.internal.view.SupportMenu;
 import android.support.v4.media.TransportMediator;
 import android.support.v4.view.ViewCompat;
 
-import com.google.android.gms.drive.MetadataChangeSet;
-import com.google.android.gms.games.quest.Quests;
-import com.google.android.gms.location.LocationRequest;
+//import com.google.android.gms.drive.MetadataChangeSet;
+//import com.google.android.gms.games.quest.Quests;
+//import com.google.android.gms.location.LocationRequest;
 
 /**
  * Created by Administrator on 2015/7/29.
@@ -282,19 +282,19 @@ public class Circle {
             var = var4 + 10;
             GameView.NoOfInitialLines = 5;
         }
-        if (GameView.levelcounter > 96 && GameView.levelcounter < Quests.SELECT_COMPLETED_UNCLAIMED) {
+        if (GameView.levelcounter > 96 && GameView.levelcounter < 101) {
             counter = var4 + 10;
             var = var4 + 10;
             GameView.NoOfInitialLines = 5;
         }
-        if (GameView.levelcounter > 100 && GameView.levelcounter < LocationRequest.PRIORITY_NO_POWER) {
+        if (GameView.levelcounter > 100 && GameView.levelcounter < 105) {
             textsize = 23;
             this.paint5.setTextSize(F.hf((float) textsize));
             counter = var4 + 10;
             var = var4 + 10;
             GameView.NoOfInitialLines = 8;
         }
-        if (GameView.levelcounter > LocationRequest.PRIORITY_LOW_POWER && GameView.levelcounter < 108) {
+        if (GameView.levelcounter > 104 && GameView.levelcounter < 108) {
             textsize = 23;
             this.paint5.setTextSize(F.hf((float) textsize));
             counter = var4 + 22;
@@ -329,7 +329,7 @@ public class Circle {
             var = var4 + 22;
             GameView.NoOfInitialLines = 3;
         }
-        if (GameView.levelcounter > 120 && GameView.levelcounter < MetadataChangeSet.CUSTOM_PROPERTY_SIZE_LIMIT_BYTES) {
+        if (GameView.levelcounter > 120 && GameView.levelcounter < 124) {
             textsize = 23;
             this.paint5.setTextSize(F.hf((float) textsize));
             counter = var4 + 12;

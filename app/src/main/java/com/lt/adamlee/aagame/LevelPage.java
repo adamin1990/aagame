@@ -10,8 +10,8 @@ import android.graphics.Typeface;
 import android.support.v4.view.ViewCompat;
 import android.view.MotionEvent;
 
-import com.google.android.gms.drive.events.CompletionEvent;
-import com.google.android.gms.location.DetectedActivity;
+//import com.google.android.gms.drive.events.CompletionEvent;
+//import com.google.android.gms.location.DetectedActivity;
 
 import java.util.Date;
 
@@ -156,7 +156,7 @@ public class LevelPage {
         int i;
         int j;
         switch (event.getAction()) {
-            case DetectedActivity.IN_VEHICLE /*0*/:
+            case 0 /*0*/:
                 this.cur_y = (int) event.getY();
                 this.cur_x = (int) event.getX();
                 this.date = new Date();
@@ -178,7 +178,7 @@ public class LevelPage {
                     i++;
                 }
                 break;
-            case CompletionEvent.STATUS_FAILURE /*1*/:
+            case 1 /*1*/:
                 this.lx = (float) ((int) event.getX());
                 this.ly = (float) ((int) event.getY());
                 this.btp = false;
@@ -223,7 +223,7 @@ public class LevelPage {
                     i++;
                 }
                 break;
-            case CompletionEvent.STATUS_CONFLICT /*2*/:
+            case 2 /*2*/:
                 this.lx = (float) ((int) event.getX());
                 this.ly = (float) ((int) event.getY());
                 this.move = true;

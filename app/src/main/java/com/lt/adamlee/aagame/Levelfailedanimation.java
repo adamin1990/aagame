@@ -7,7 +7,7 @@ import android.graphics.Paint;
 import android.graphics.Typeface;
 import android.support.v4.view.ViewCompat;
 
-import com.google.android.gms.maps.model.BitmapDescriptorFactory;
+//import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 
 /**
  * Created by Administrator on 2015/7/29.
@@ -272,7 +272,7 @@ public class Levelfailedanimation {
                 c.drawBitmap(this.alertbox, 0.0f, 0.0f, null);
                 c.drawRect(F.wf(85.0f), F.hf(290.0f), F.wf(235.0f), F.hf(310.0f), this.transparentpaint);
                 c.drawText(GameView.levelcounter+"", F.wf(154.0f), F.hf(242.0f), paint13);
-                c.drawRect(F.wf(140.0f), F.hf(BitmapDescriptorFactory.HUE_AZURE), F.wf(190.0f), F.hf(260.0f), this.transparentpaint);
+                c.drawRect(F.wf(140.0f), F.hf(210.0f), F.wf(190.0f), F.hf(260.0f), this.transparentpaint);
             }
         }
     }

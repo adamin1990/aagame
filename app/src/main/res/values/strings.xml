@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">aagame</string>
+    <string name="app_name">点圈圈</string>
 
     <string name="common_google_play_services_notification_ticker">Google Play services error</string>
     <string name="common_google_play_services_notification_needs_installation_title">An application requires installation of Google Play services.</string>
@@ -47,11 +47,11 @@
     <string name="level">Level</string>
     <string name="about">About</string>
     <string name="help">Help</string>
-    <string name="helptext">Tap on screen to pin dots in $the speeding circle. Pin all the $ dots coming on screen over $ wheel to complete the level.</string>
-    <string name="yes">Yes</string>
-    <string name="cancel">Cancel</string>
-    <string name="rateit">Rate It</string>
-    <string name="wantexit">Do you want to exit?</string>
+    <string name="helptext">点击屏幕上的引脚点在飞 $ 驰圈。引脚所有的点来在屏幕上 $ 了轮子来完成的水平。</string>
+    <string name="yes">退出</string>
+    <string name="cancel">取消</string>
+    <string name="rateit">评论</string>
+    <string name="wantexit">确认退出吗?</string>
     <string name="app_id">811373365278</string>
     <string name="leaderboard_id">CgkInpD8zM4XEAIQAQ</string>
     <string name="Your_Score_uploading">Your Score will be uploading</string>

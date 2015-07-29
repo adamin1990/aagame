@@ -1,3 +1,4 @@
+/*
 package com.lt.adamlee.aagame;
 
 import android.annotation.SuppressLint;
@@ -13,12 +14,12 @@ import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.RelativeLayout;
 
-import com.google.android.gms.ads.identifier.AdvertisingIdClient;
-import com.google.android.gms.cast.TextTrackStyle;
-import com.google.android.gms.common.GooglePlayServicesNotAvailableException;
-import com.google.android.gms.common.GooglePlayServicesRepairableException;
-import com.google.android.gms.drive.DriveFile;
-import com.google.android.gms.location.GeofenceStatusCodes;
+//import com.google.android.gms.ads.identifier.AdvertisingIdClient;
+//import com.google.android.gms.cast.TextTrackStyle;
+//import com.google.android.gms.common.GooglePlayServicesNotAvailableException;
+//import com.google.android.gms.common.GooglePlayServicesRepairableException;
+//import com.google.android.gms.drive.DriveFile;
+//import com.google.android.gms.location.GeofenceStatusCodes;
 
 import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
@@ -30,9 +31,11 @@ import java.io.IOException;
 import java.util.Timer;
 import java.util.TimerTask;
 
+*/
 /**
  * Created by Administrator on 2015/7/29.
- */
+ *//*
+
 public class VimapAdService {
     private static String AdLINK;
     private static String AdPath;
@@ -64,9 +67,13 @@ public class VimapAdService {
     private Timer timer;
     private boolean top;
 
-    /* renamed from: com.vimap.adservice.VimapAdService.1 */
+    */
+/* renamed from: com.vimap.adservice.VimapAdService.1 *//*
+
     class AnonymousClass1 implements Runnable {
-        private final /* synthetic */ WebView val$topView;
+        private final */
+/* synthetic *//*
+ WebView val$topView;
 
         AnonymousClass1(WebView webView) {
             this.val$topView = webView;
@@ -82,9 +89,13 @@ public class VimapAdService {
         }
     }
 
-    /* renamed from: com.vimap.adservice.VimapAdService.2 */
+    */
+/* renamed from: com.vimap.adservice.VimapAdService.2 *//*
+
     class AnonymousClass2 implements Runnable {
-        private final /* synthetic */ WebView val$bottomView;
+        private final */
+/* synthetic *//*
+ WebView val$bottomView;
 
         AnonymousClass2(WebView webView) {
             this.val$bottomView = webView;
@@ -100,9 +111,13 @@ public class VimapAdService {
         }
     }
 
-    /* renamed from: com.vimap.adservice.VimapAdService.3 */
+    */
+/* renamed from: com.vimap.adservice.VimapAdService.3 *//*
+
     class AnonymousClass3 implements Runnable {
-        private final /* synthetic */ WebView val$topView;
+        private final */
+/* synthetic *//*
+ WebView val$topView;
 
         AnonymousClass3(WebView webView) {
             this.val$topView = webView;
@@ -117,9 +132,13 @@ public class VimapAdService {
         }
     }
 
-    /* renamed from: com.vimap.adservice.VimapAdService.4 */
+    */
+/* renamed from: com.vimap.adservice.VimapAdService.4 *//*
+
     class AnonymousClass4 implements Runnable {
-        private final /* synthetic */ WebView val$bottomView;
+        private final */
+/* synthetic *//*
+ WebView val$bottomView;
 
         AnonymousClass4(WebView webView) {
             this.val$bottomView = webView;
@@ -495,3 +514,4 @@ public class VimapAdService {
     }
 
 }
+*/

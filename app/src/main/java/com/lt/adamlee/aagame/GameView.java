@@ -22,10 +22,10 @@ import android.view.MotionEvent;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
 
-import com.google.android.gms.drive.MetadataChangeSet;
-import com.google.android.gms.games.quest.Quests;
-import com.google.android.gms.location.LocationRequest;
-import com.google.android.gms.maps.model.BitmapDescriptorFactory;
+//import com.google.android.gms.drive.MetadataChangeSet;
+//import com.google.android.gms.games.quest.Quests;
+//import com.google.android.gms.location.LocationRequest;
+//import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 
 /**
  * Created by Administrator on 2015/7/29.
@@ -198,7 +198,7 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback{
         paint4.setColor(ViewCompat.MEASURED_STATE_MASK);
         paint4.setAntiAlias(true);
         paint4.setFilterBitmap(true);
-        paint4.setPathEffect(new DashPathEffect(new float[]{BitmapDescriptorFactory.HUE_ORANGE, 0.0f}, 0.0f));
+        paint4.setPathEffect(new DashPathEffect(new float[]{30.0f, 0.0f}, 0.0f));
         paint4.setStrokeWidth(2.0f);
         paint4.setColor(ViewCompat.MEASURED_STATE_MASK);
         paint3.setColor(ViewCompat.MEASURED_STATE_MASK);
@@ -361,15 +361,15 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback{
             NoOfInitialLines = 5;
             saveline = NoOfInitialLines;
         }
-        if (levelcounter > 96 && levelcounter < Quests.SELECT_COMPLETED_UNCLAIMED) {
+        if (levelcounter > 96 && levelcounter < 101) {
             NoOfInitialLines = 5;
             saveline = NoOfInitialLines;
         }
-        if (levelcounter > 100 && levelcounter < LocationRequest.PRIORITY_NO_POWER) {
+        if (levelcounter > 100 && levelcounter < 105) {
             NoOfInitialLines = 8;
             saveline = NoOfInitialLines;
         }
-        if (levelcounter > LocationRequest.PRIORITY_LOW_POWER && levelcounter < 108) {
+        if (levelcounter > 104 && levelcounter < 108) {
             NoOfInitialLines = 3;
             saveline = NoOfInitialLines;
         }
@@ -389,7 +389,7 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback{
             NoOfInitialLines = 4;
             saveline = NoOfInitialLines;
         }
-        if (levelcounter > 120 && levelcounter < MetadataChangeSet.CUSTOM_PROPERTY_SIZE_LIMIT_BYTES) {
+        if (levelcounter > 120 && levelcounter < 124) {
             NoOfInitialLines = 8;
             saveline = NoOfInitialLines;
         }
@@ -625,8 +625,8 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback{
                             if (hcm >= 11) {
                                 circleblink = false;
                                 mainpage = 6;
-                                GameActivity.vimapad.isBottomAdVisible(true);
-                                GameActivity.vimapad.isTopAdVisible(true);
+//                                GameActivity.vimapad.isBottomAdVisible(true);
+//                                GameActivity.vimapad.isTopAdVisible(true);
                                 holdcounter = 0;
                                 hcm = 0;
                             }
@@ -734,7 +734,7 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback{
         Paint pagepaint = new Paint();
         pagepaint.setColor(getResources().getColor(R.color.abc_secondary_text_material_light));
         c.drawRect(0.0f, 0.0f, (float) screenW, (float) screenH, pagepaint);
-        p3.setTextSize(F.hf(BitmapDescriptorFactory.HUE_ORANGE));
+        p3.setTextSize(F.hf(30.0f));
         c.drawText(ctx.getString(R.string.about), ((float) (screenW / 2)) - (p3.measureText(ctx.getString(R.string.about)) / 2.0f), (float) (screenH / 4), p3);
         p3.setTextSize((float) textsize);
         c.drawText(ctx.getString(R.string.app_name), ((float) (screenW / 2)) - (p3.measureText(ctx.getString(R.string.app_name)) / 2.0f), (float) (((textsize * 2) + 1) + ((screenH - (textsize * 7)) / 2)), p3);
@@ -755,7 +755,7 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback{
         p4.setColor(getResources().getColor(R.color.bright_foreground_inverse_material_light));
         p4.setFlags(1);
         p5.setTypeface(tf);
-        p5.setTextSize(F.hf(BitmapDescriptorFactory.HUE_ORANGE));
+        p5.setTextSize(F.hf(30.0f));
         p6.setTextSize(textsize);
         p5.setColor(ViewCompat.MEASURED_STATE_MASK);
         c.drawRect(0.0f, 0.0f, (float) screenW, (float) screenH, p4);
@@ -811,8 +811,8 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback{
             saveline = NoOfInitialLines;
         }
         if (levelcounter > 3 && levelcounter < 7) {
-            counter = Circle.var4 + 10;
-           Circle.var = Circle.var4 + 10;
+            counter = Circle.var4 + 4;
+           Circle.var = Circle.var4;
             NoOfInitialLines = 8;
             saveline = NoOfInitialLines;
         }
@@ -996,18 +996,18 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback{
             NoOfInitialLines = 5;
             saveline = NoOfInitialLines;
         }
-        if (levelcounter > 96 && levelcounter < Quests.SELECT_COMPLETED_UNCLAIMED) {
+        if (levelcounter > 96 && levelcounter < 101) {
             counter = Circle.var4 + 10;
             Circle.var = Circle.var4 + 10;
             NoOfInitialLines = 5;
             saveline = NoOfInitialLines;
         }
-        if (levelcounter > 100 && levelcounter < LocationRequest.PRIORITY_NO_POWER) {
+        if (levelcounter > 100 && levelcounter < 105) {
             counter = Circle.var4 + 6;
             Circle.var = Circle.var4 + 6;
             saveline = NoOfInitialLines;
         }
-        if (levelcounter > LocationRequest.PRIORITY_LOW_POWER && levelcounter < 108) {
+        if (levelcounter > 104 && levelcounter < 108) {
             counter = Circle.var4 + 22;
             Circle.var = Circle.var4 + 22;
             saveline = NoOfInitialLines;
@@ -1032,7 +1032,7 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback{
             Circle.var = Circle.var4 + 22;
             saveline = NoOfInitialLines;
         }
-        if (levelcounter > 120 && levelcounter < MetadataChangeSet.CUSTOM_PROPERTY_SIZE_LIMIT_BYTES) {
+        if (levelcounter > 120 && levelcounter < 124) {
             counter = Circle.var4 + 12;
             Circle.var = Circle.var4 + 12;
             saveline = NoOfInitialLines;
@@ -1228,8 +1228,8 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback{
                     if (new RectF(F.wf(110.0f), F.hf(175.0f), F.wf(110.0f) + ((float) ((int) F.wf(90.0f))), F.hf(175.0f) + ((float) ((int) F.wf(90.0f)))).contains((float) this.touchx, (float) this.touchy)) {
                         levelcounter = GameActivity.gameLevel;
                         mainpage = 3;
-                        GameActivity.vimapad.isBottomAdVisible(true);
-                        GameActivity.vimapad.isTopAdVisible(false);
+//                        GameActivity.vimapad.isBottomAdVisible(true);
+//                        GameActivity.vimapad.isTopAdVisible(false);
                         Circle.bak1 = true;
                     }
                 }
@@ -1254,19 +1254,19 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback{
             this.leadery = (int) event.getY();
             if (new Rect((int) F.wf(215.0f), (int) F.hf(340.0f), ((int) F.wf(246.0f)) + ((int) F.wf(70.0f)), ((int) F.hf(340.0f)) + ((int) F.wf(70.0f))).contains(this.leaderx, this.leadery)) {
                 GameActivity start = (GameActivity) ctx;
-                start.checkGooglPlayService();
-                start.beginUserInitiatedSignIn();
-                start.onShowLeaderboardsRequested();
+//                start.checkGooglPlayService();
+//                start.beginUserInitiatedSignIn();
+//                start.onShowLeaderboardsRequested();
             }
         }
         if (Levelfailedanimation.holdanim >= 5 && mainpage == 6) {
             if (event.getAction() == 0) {
                 this.animx = (int) event.getX();
                 this.animy = (int) event.getY();
-                if (new Rect((int) F.wf(140.0f), (int) F.hf(BitmapDescriptorFactory.HUE_AZURE), (int) F.wf(190.0f), (int) F.hf(260.0f)).contains(this.animx, this.animy)) {
+                if (new Rect((int) F.wf(140.0f), (int) F.hf(210.0f), (int) F.wf(190.0f), (int) F.hf(260.0f)).contains(this.animx, this.animy)) {
                     mainpage = 3;
-                    GameActivity.vimapad.isBottomAdVisible(true);
-                    GameActivity.vimapad.isTopAdVisible(false);
+//                    GameActivity.vimapad.isBottomAdVisible(true);
+//                    GameActivity.vimapad.isTopAdVisible(false);
                     circleblink = false;
                     reset();
                     errorcircle = false;
@@ -1291,8 +1291,8 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback{
                 this.choosex = (int) event.getX();
                 this.choosey = (int) event.getY();
                 if (new Rect((int) F.wf(85.0f), (int) F.hf(290.0f), (int) F.wf(235.0f), (int) F.hf(310.0f)).contains(this.choosex, this.choosey)) {
-                    GameActivity.vimapad.isBottomAdVisible(true);
-                    GameActivity.vimapad.isTopAdVisible(false);
+//                    GameActivity.vimapad.isBottomAdVisible(true);
+//                    GameActivity.vimapad.isTopAdVisible(false);
                     Levelfailedanimation.showtransparencyflag = false;
                     Levelfailedanimation.holdlevelanim = 0;
                     Levelfailedanimation.holdanim = 0;
@@ -1321,7 +1321,7 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback{
                 if (linecounter > 0) {
                     j = 0;
                     while (j < linecounter) {
-                        if ((rotation[j] >= 0.0f && ((rotation[j] < BitmapDescriptorFactory.HUE_CYAN && getDistance(Math.abs((F.hf(272.0f) - F.hf(105.0f)) - F.hf(272.0f)) + F.wf(10.0f), rotation[j]) < ((double) (2.0f * F.wf(10.0f)))) || (rotation[j] > BitmapDescriptorFactory.HUE_CYAN && getDistance(Math.abs((F.hf(272.0f) - F.hf(105.0f)) - F.hf(272.0f)) + F.wf(10.0f), 360.0f - rotation[j]) < ((double) (2.0f * F.wf(10.0f)))))) || (rotation[j] < 0.0f && ((rotation[j] > -180.0f && getDistance(Math.abs((F.hf(272.0f) - F.hf(105.0f)) - F.hf(272.0f)) + F.wf(10.0f), Math.abs(rotation[j])) < ((double) (2.0f * F.wf(10.0f)))) || (rotation[j] < -180.0f && getDistance(Math.abs((F.hf(272.0f) - F.hf(105.0f)) - F.hf(272.0f)) + F.wf(10.0f), 360.0f - Math.abs(rotation[j])) < ((double) (2.0f * F.wf(10.0f))))))) {
+                        if ((rotation[j] >= 0.0f && ((rotation[j] < 180.0f && getDistance(Math.abs((F.hf(272.0f) - F.hf(105.0f)) - F.hf(272.0f)) + F.wf(10.0f), rotation[j]) < ((double) (2.0f * F.wf(10.0f)))) || (rotation[j] > 180.0f && getDistance(Math.abs((F.hf(272.0f) - F.hf(105.0f)) - F.hf(272.0f)) + F.wf(10.0f), 360.0f - rotation[j]) < ((double) (2.0f * F.wf(10.0f)))))) || (rotation[j] < 0.0f && ((rotation[j] > -180.0f && getDistance(Math.abs((F.hf(272.0f) - F.hf(105.0f)) - F.hf(272.0f)) + F.wf(10.0f), Math.abs(rotation[j])) < ((double) (2.0f * F.wf(10.0f)))) || (rotation[j] < -180.0f && getDistance(Math.abs((F.hf(272.0f) - F.hf(105.0f)) - F.hf(272.0f)) + F.wf(10.0f), 360.0f - Math.abs(rotation[j])) < ((double) (2.0f * F.wf(10.0f))))))) {
                             errorcircle = true;
                             circleblink = true;
                         }
@@ -1334,8 +1334,8 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback{
                 if (!circleblink && Circle.value == (-Circle.var)) {
                     errorcircle = true;
                     colcircle = true;
-                    GameActivity.vimapad.isBottomAdVisible(true);
-                    GameActivity.vimapad.isTopAdVisible(false);
+//                    GameActivity.vimapad.isBottomAdVisible(true);
+//                    GameActivity.vimapad.isTopAdVisible(false);
                     Circle.blink = true;
                     if (levelcounter == 202) {
                         levelcounter = 1;
