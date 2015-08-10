@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">点圈圈</string>
+    <string name="app_name">见缝就插</string>
 
     <string name="common_google_play_services_notification_ticker">Google Play services error</string>
     <string name="common_google_play_services_notification_needs_installation_title">An application requires installation of Google Play services.</string>

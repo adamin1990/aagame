@@ -1,11 +1,21 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/RelativeLayout1"
     tools:context="com.lt.adamlee.aagame.GameActivity">
 
 
-        <com.lt.adamlee.aagame.GameView android:layout_width="fill_parent" android:layout_height="fill_parent" />
+        <com.lt.adamlee.aagame.GameView
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent" />
+    <LinearLayout
+        android:id="@+id/layout_adview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="50dp"
+        android:gravity="top"
+        android:layout_centerInParent="true"
+        android:orientation="vertical" ></LinearLayout>
 
 
-</RelativeLayout>
+</FrameLayout>

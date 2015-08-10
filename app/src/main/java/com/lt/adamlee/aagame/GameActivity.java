@@ -19,6 +19,8 @@ import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.FrameLayout;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
 
@@ -31,6 +33,13 @@ import android.widget.Toast;
 //import com.google.android.gms.games.Player;
 //import com.google.android.gms.games.request.GameRequest;
 ////import com.google.android.gms.plus.Plus;
+
+import com.iflytek.voiceads.AdError;
+import com.iflytek.voiceads.AdKeys;
+import com.iflytek.voiceads.IFLYAdListener;
+import com.iflytek.voiceads.IFLYAdSize;
+import com.iflytek.voiceads.IFLYBannerAd;
+import com.umeng.analytics.MobclickAgent;
 
 import java.util.ArrayList;
 
@@ -68,7 +77,10 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
     boolean mShowErrorDialogs;
     boolean mSignInCancelled;
     boolean mUserInitiatedSignIn;
-    RelativeLayout rolLayout;
+    FrameLayout rolLayout;
+
+    private LinearLayout layout_ads;
+    private IFLYBannerAd bannerView;
 
 
     public GameActivity() {
@@ -139,12 +151,70 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
 //            DefaultData.RateUrl = "sam://details?id=" + getApplicationContext().getPackageName();
 //        }
         setContentView(R.layout.activity_game);
-        this.rolLayout = (RelativeLayout) findViewById(R.id.RelativeLayout1   );
+        this.rolLayout = (FrameLayout) findViewById(R.id.RelativeLayout1   );
 //        vimapad.addView(this, this.rolLayout, true, true, DefaultData.cid, Integer.parseInt(DefaultData.pid_game), true);
 //        vimapad.isBottomAdVisible(true);
 //        vimapad.isTopAdVisible(false);
+        createBannerAd();
 
     }
+
+    public void createBannerAd() {
+        //此广告位为Demo专用，广告的展示不产生费用
+        String adUnitId = "863C5E84C3D841A5AD0DFB9ED7AA06A6";
+        //创建旗帜广告，传入广告位ID
+        bannerView = IFLYBannerAd.createBannerAd(this, adUnitId);
+        //设置请求的广告尺寸
+        bannerView.setAdSize(IFLYAdSize.BANNER);
+        //设置下载广告前，弹窗提示
+        bannerView.setParameter(AdKeys.DOWNLOAD_ALERT, "true");
+
+        //请求广告，添加监听器
+        bannerView.loadAd(mAdListener);
+        //将广告添加到布局
+        layout_ads = (LinearLayout)findViewById(R.id.layout_adview);
+        layout_ads.removeAllViews();
+        layout_ads.addView(bannerView);
+
+    }
+
+    IFLYAdListener mAdListener = new IFLYAdListener(){
+
+        /**
+         * 广告请求成功
+         */
+        @Override
+        public void onAdReceive() {
+            //展示广告
+            bannerView.showAd();
+
+            Log.d("Ad_Android_Demo", "onAdReceive");
+        }
+
+        /**
+         * 广告请求失败
+         */
+        @Override
+        public void onAdFailed(AdError error) {
+            Log.d("Ad_Android_Demo", "onAdFailed");
+        }
+
+        /**
+         * 广告被点击
+         */
+        @Override
+        public void onAdClick() {
+            Log.d("Ad_Android_Demo", "onAdClick");
+        }
+
+        /**
+         * 广告被关闭
+         */
+        @Override
+        public void onAdClose() {
+            Log.d("Ad_Android_Demo", "onAdClose");
+        }
+    };
 
     public void getState() {
         SharedPreferences preferences = getPreferences(Context.MODE_PRIVATE);
@@ -171,12 +241,14 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
         super.onResume();
         isResume = true;
         GameView.mainpage = page;
+        MobclickAgent.onResume(this);
     }
 
     protected void onPause() {
         super.onPause();
         isResume = false;
         page = GameView.mainpage;
+        MobclickAgent.onPause(this);
     }
 
     protected void onStop() {
